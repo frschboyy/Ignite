@@ -101,10 +101,10 @@ body {
 }
 
 section#contact {
-  background-image: url('../images/contactbg.jpg');
+  background-image: url('../images/contact.jpg');
   background-size: cover;
   background-position: center;
-  color: #FFFFFF;
+  color: #000000;
   padding: 100px 0;
   text-align: center;
   opacity: 0.9;

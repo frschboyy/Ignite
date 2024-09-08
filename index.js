@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4000;
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const admin = require('firebase-admin');
 const serviceAccount = require("./serviceAccount.json");
 const { signInWithEmailAndPassword, getAuth, createUserWithEmailAndPassword } = require('firebase/auth');
-const Initialize = require('firebase/app');
-const validator = require('validator');
+const initializeApp = require('firebase/app');
 const bodyParser = require('body-parser');
 const filestore = require("session-file-store")(sessions)
 const adminkey = "/VdN3d0nRPuxrfhfwDq1oJ4iAWp3eFYpa1lKHT8Lh4fJaGj1M0D"
 // const cookieParser
 // const { getAuth, createUserWithEmailAndPassword } = require( "firebase/auth");
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
@@ -20,17 +20,17 @@ admin.initializeApp({
 const db = admin.firestore()
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCAAK7Bo8367NIO37NLk78LwpnZTqHp0fE",
-    authDomain: "vibrantventures-4901a.firebaseapp.com",
-    projectId: "vibrantventures-4901a",
-    storageBucket: "vibrantventures-4901a.appspot.com",
-    messagingSenderId: "639225366262",
-    appId: "1:639225366262:web:8a1e0446040d82ceb58ed7",
-    measurementId: "G-J1ZBPDPGMZ"
+    apiKey: "AIzaSyCUWeKM2xwmjXzh7Kw2WLWaU5LfwYAvYCw",
+    authDomain: "youth-ignite-e2db8.firebaseapp.com",
+    projectId: "youth-ignite-e2db8",
+    storageBucket: "youth-ignite-e2db8.appspot.com",
+    messagingSenderId: "728656070262",
+    appId: "1:728656070262:web:6094fcf4a73771d4bcc157",
+    measurementId: "G-6CVLF8HMJE"
 };
 
 // Initialize Firebase
-const firebase = Initialize.initializeApp(firebaseConfig);
+const firebase = initializeApp.initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication
 const auth = getAuth(firebase)
