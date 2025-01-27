@@ -68,20 +68,38 @@ section#about-us{
 
 /* Center the chart container vertically and horizontally */
 #market {
-  padding: 50px;
+  padding: 50px 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#market h2 {
+  font-size: 2rem;
+  color: var(--maincolor);
+  margin-bottom: 20px;
+}
+
+#market p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  max-width: 600px;
 }
 
 .chart-container {
-  width: 400px; /* Fixed width */
-  height: 400px; /* Fixed height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0; /* Optional: Background color for contrast */
+  width: 90%; /* Default width as a percentage */
+  max-width: 400px; /* Constrain the max size */
+  aspect-ratio: 1 / 1; /* Maintain a square shape */
+  position: relative;
+  margin: 20px auto; /* Center the chart with auto margins */
+  background-color: #fff; /* Optional: Background color for contrast */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Smooth corners */
+  padding: 10px;
 }
 
 #icon-list-section {
@@ -232,12 +250,15 @@ section#services {
 }
 
 .value-item {
-  align-content: center;
+  display: flex; /* Make the container a flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  text-align: center;
 }
 
 .value-item h3 {
@@ -257,9 +278,8 @@ section#services {
   width: auto;
   height: auto;
   object-fit: cover; /* Ensures images maintain their aspect ratio */
-  
   border-radius: 10px; /* Optional: round edges */
-  margin-bottom: 10px; /* Add space between image and text */
+  margin-bottom: 10px; /* Add space between the image and the text */
 }
 
 .vp_img img {
@@ -346,6 +366,20 @@ footer {
   }
 }
 
+/* Responsive Chart Adjustments */
+@media (max-width: 768px) {
+  #market h2 {
+    font-size: 1.5rem;
+  }
+
+  #market p {
+    font-size: 0.9rem;
+  }
+
+  .chart-container {
+    width: 80%; /* Reduce size for smaller screens */
+  }
+}
 
 /* Responsive Font Sizes */
 @media only screen and (max-width: 1200px) {

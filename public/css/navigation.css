@@ -79,13 +79,15 @@
 @media only screen and (max-width: 768px) {
     .header {
         flex-direction: column;
+        gap: 20px;
         align-items: center;
         text-align: center;
     }
 
     .navbar ul {
-        flex-direction: column;
-        gap: 10px; /* Adjust spacing for stacked items */
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
     }
 
     .navbar {
