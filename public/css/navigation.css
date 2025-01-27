@@ -86,8 +86,11 @@
 
     .navbar ul {
         flex-direction: row;
-        gap: 15px;
+        gap: 10px;
         justify-content: center;
+    }
+    .navbar ul li a {
+        font-size:0.7rem;
     }
 
     .navbar {
