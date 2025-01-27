@@ -36,12 +36,34 @@ p {
   margin-bottom: 40px;
 }
 
+form {
+  max-width: 600px;
+  /* Matches the max-width of the container or text above */
+  margin: 0 auto;
+  /* Center the form */
+  padding: 0 15px;
+  /* Add padding for smaller screens */
+  box-sizing: border-box;
+}
+
 form input,
 form textarea {
   width: 100%;
-  max-width: 100%; /* Prevent inputs from exceeding their parent width */
-  box-sizing: border-box; /* Include padding and borders in width calculations */
-  margin-bottom: 15px; 
+  /* Ensure fields take up the full width of the form */
+  max-width: 100%;
+  /* Prevent exceeding parent width */
+  padding: 12px;
+  /* Increase padding for better usability */
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #777777;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  /* Optional: Add rounded corners */
+  margin-bottom: 15px;
+  /* Spacing between elements */
+  box-sizing: border-box;
+  /* Include padding and borders in width calculations */
 }
 
 form input ::placeholder,
@@ -52,16 +74,15 @@ form textarea ::placeholder {
   /* Increased font size */
 }
 
-/*form textarea {
-    height: 150px;
-  }
-*/
 form input[type="submit"] {
+  max-width: 200px;
+  /* Restrict the width of the button */
   background-color: #FF6600;
   color: #FFFFFF;
   border: none;
   padding: 10px 20px;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -72,7 +93,8 @@ form input[type="submit"]:hover {
 
 /* Adjust header for spacing */
 .header {
-  padding: 10px 15px; /* Add padding for breathing room */
+  padding: 10px 15px;
+  /* Add padding for breathing room */
   box-sizing: border-box;
 }
 
@@ -118,12 +140,31 @@ footer {
   form input,
   form textarea {
     font-size: 12px;
-    padding: 8px; /* Reduce padding for small screens */
+    padding: 8px;
+    /* Reduce padding for small screens */
   }
 
   form input[type="submit"] {
     width: 100%;
     padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Adjust form for larger screens */
+@media (min-width: 768px) {
+  form {
+    max-width: 600px; /* Keep consistency with the text width */
+  }
+
+  form input,
+  form textarea {
+    font-size: 16px;
+    padding: 12px; /* Keep larger padding for better design */
+  }
+
+  form input[type="submit"] {
+    max-width: 200px;
     font-size: 16px;
   }
 }
