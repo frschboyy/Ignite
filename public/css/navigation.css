@@ -91,6 +91,7 @@
     }
     .navbar ul li a {
         font-size:0.7rem;
+        padding: 4px 7px;
     }
 
     .navbar {
