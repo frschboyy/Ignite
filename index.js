@@ -73,60 +73,13 @@ app.get('/about-us', (request, response) => {
     response.render('aboutus')
 })
 
-// Booking Form page only accessible if user is logged in
-app.get('/booking-form', (request, response) => {
-    if (request.session.user) {
-        response.render('forms')
-    } else {
-        // response.status(401).json({ message: "You must have an account to access this page." });
-        response.redirect('/')
-    }
-});
-
-// Logout function only works if user is logged in
-app.get('/logout', (request, response) => {
-    if (request.session.user) {
-        request.session.destroy(error => {
-            if (error) {
-                console.error("Error destroying session:", error);
-                response.status(500).json({ message: "Error occurred during logout." });
-            } else {
-                response.clearCookie('Sessioonnnnn')
-                response.redirect('/')
-                // response.status(200).json({ message: "logged out." });
-            }
-        })
-    } else {
-        response.status(401).json({ message: "N/A: NOT ACCESSIBLE" });
-        // response.redirect('/')
-
-    }
+app.get('/donation-form', (request, response) => {
+    response.render('donation')
 });
 
 app.get('/contact-us', (request, response) => {
     response.render('contactus')
 })
-
-app.get('/sign-up', (request, response) => {
-    response.render('signup')
-})
-
-app.get('/login', (request, response) => {
-    response.render('login')
-})
-
-app.get('/reports', async (request, response) => {
-    try {
-        // Get User Booking Data from firebase
-        const userEmail = request.session.user.email;
-        const snapshot = await db.collection('Travel Details').where('user.email', '==', userEmail).get()
-        const bookingData = snapshot.docs.map(doc => doc.data());
-        response.render('reports', { bookingData })
-    } catch (error) {
-        console.error('Error during retrieval')
-        response.status(500).send('Error retrieving data')
-    }
-});
 
 app.get(adminkey, async (request, response) => {
     try {
@@ -137,74 +90,6 @@ app.get(adminkey, async (request, response) => {
     } catch (error) {
         console.error('Error during retrieval')
         response.status(500).send('Error retrieving data')
-    }
-});
-
-app.post('/signup-data', async (request, response) => {
-    try {
-        const { fName, lName, uName, email, password } = request.body;
-
-        try {
-            createUserWithEmailAndPassword(auth, email, password)
-                .then(async (userCredential) => {
-                    const user = userCredential.user
-                    const docRef = await db.collection('users').doc(user.uid);
-                    delete request.body.password;
-                    await docRef.set(request.body)
-
-                    return response.status(201).json({
-                        message: 'User inserted succesfully'
-                    })
-
-                })
-
-        } catch (error) {
-            return response.status(500).json({
-                message: 'Error creating user'
-            })
-        }
-
-        // Add user data to Firestore
-        // const userData = request.body;
-
-        // console.log("User signed up successfully with ID: ", docRef.id);
-        // response.status(200).json({ message: "User signed up successfully!" });
-    } catch (error) {
-        console.error("Error During Signup", error);
-        if (error.code === 'auth/email-already-in-use') {
-            return response.status(400).json({ message: "Email already registered" });
-        } else {
-            response.status(500).json({ message: "An error occurred during signup. Please try again." });
-        }
-    }
-});
-
-app.post('/login-data', async (request, response) => {
-    try {
-        const { email, password } = request.body;
-
-        // Sign in with Firebase Authentication
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-        console.log("User logged in:", user.uid, user.email);
-
-        // Set Session Data
-        if (user) {
-            // request.session.uid = user.id;
-
-            // Personalize information retrieval
-            const getUserData = await db.collection('users').doc(user.uid).get();
-            const userData = getUserData.data();
-            request.session.user = userData;
-            request.session.save()
-
-            response.status(200).json({ message: `${userData.fName} ${userData.lName} has logged in` });
-        } else {
-            return response.status(401).json({ message: "Invalid email or password." });
-        }
-    } catch (error) {
-        console.error("Login Error:", error);
-        response.status(500).json({ message: "Error occured suring login. Try again." })
     }
 });
 
@@ -226,31 +111,6 @@ app.post('/booking-data', async (request, response) => {
     } catch (error) {
         console.error("Error booking:", error);
         response.status(500).json({ message: "Error booking" });
-    }
-});
-
-// Handle DELETE request to remove a booking
-app.delete('/booking-data/:id', async (request, response) => {
-    try {
-        const userEmail = request.query.userEmail;
-
-        // Array containing references to all bookings by user
-        const bookings = db.collection('Travel Details')
-        const snapshot = await bookings.where('user.email', '==', userEmail).get()
-
-        // Delete each booking via their reference
-        const deleteBooking = snapshot.docs.map(doc => doc.ref.delete())
-        await Promise.all(deleteBooking);
-
-        response.json({ message: `Bookings deleted successfully!` });
-
-        const bookingId = request.params.id;
-        await db.collection('Travel Details').doc(bookingId).delete();
-        response.json({ message: "Booking deleted successfully." });
-    }
-    catch (error) {
-        console.error("Error deleting booking:", error);
-        response.status(500).json({ message: "Error deleting booking" });
     }
 });
 

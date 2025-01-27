@@ -12,14 +12,3 @@ const getCookie = (cookie_name) => {
         return false
     }
 }
-
-(
-    function islogged() {
-        // console.log(getCookie('User_Session'))
-        if (getCookie('Sessioonnnnn')) {
-            document.getElementById('signup').style.display = 'none'
-        } else {
-            document.getElementById('logout').style.display = 'none'
-        }
-    }
-)();

@@ -13,71 +13,19 @@ h3,
 p,
 ul,
 li {
+  text-align: center;
   margin: 0;
   padding: 0;
 }
 
-h2 {
+h2, h3 {
   color:var(--thirdcolor);
-  text-align: center;
   font-size: 2rem;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: auto;
-  padding: 25px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 100000;
-  background-color: white;
-}
-
-.header #logo {
-  color: black;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
-.header #logo span {
-  color: var(--thirdcolor);
-}
-
-/* Navbar */
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  padding: 5px 10px;
-  font-size: 1rem;
-  color: var(--thirdcolor);
-}
-
-.navbar ul li a.active {
-  color: var(--secondclr);
-  font-weight: bold;
-  border-bottom: 2px solid var(--secondclr);
-}
-
-.navbar a:hover {
-  color: black;
 }
 
 /* General Container Styles */
@@ -120,6 +68,7 @@ section#about-us{
 
 /* Center the chart container vertically and horizontally */
 #market {
+  padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,7 +116,7 @@ section#about-us{
 #revenue-generation {
   background-color: #f4f4f4; /* Dark background for contrast */
   color: #777777; /* Light text color for readability */
-  padding: 2rem;
+  padding: 20px;;
 }
 
 .revenue-generation-container {
@@ -175,26 +124,10 @@ section#about-us{
   margin: 0 auto; /* Centers the container */
 }
 
-#revenue-generation h2 {
-  color: var(--thirdcolor); /* Bold color for the heading */
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 #revenue-generation p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-}
-
-#revenue-generation ul {
-  list-style-type: disc; /* Standard bullet points */
-  margin-left: 2rem;
-}
-
-#revenue-generation li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
 }
 
 /* Responsive Design */
@@ -225,7 +158,7 @@ section#hero {
 .solid_img {
   flex: 1;
   background-image: url(../images/solid.png); /* Define your image source here */
-  background-size: 100px; /* Ensure the image covers the container */
+  background-size: 150px; /* Ensure the image covers the container */
   background-position:top; /* Center the image */
   background-repeat: no-repeat; /* Prevent repeating */
   height: 300px; /* Adjust the height as needed */
@@ -299,6 +232,7 @@ section#services {
 }
 
 .value-item {
+  align-content: center;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -317,6 +251,17 @@ section#services {
   color: #555;
 }
 
+.value-item img {
+  max-width: 150px; /* Set maximum width */
+  max-height: 150px; /* Set maximum height */
+  width: auto;
+  height: auto;
+  object-fit: cover; /* Ensures images maintain their aspect ratio */
+  
+  border-radius: 10px; /* Optional: round edges */
+  margin-bottom: 10px; /* Add space between image and text */
+}
+
 .vp_img img {
   max-width: 100%;
   height: auto;
@@ -330,7 +275,6 @@ section#services {
 .team-container {
   max-width: 800px; /* or any value that fits your design */
   margin: 0 auto; /* centers the content */
-  padding: 20px; /* optional padding */
 }
 
 .contact-text {
@@ -377,34 +321,6 @@ footer {
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-  }
-
-  .header #logo {
-    margin-bottom: 10px;
-  }
-
-  .header nav.navbar {
-    display: block;
-    margin-top: 10px;
-  }
-
-  .header .navbar a {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-
-  header h2 {
-    font-size: 18px;
-  }
-
   section#hero h3 {
     font-size: 24px;
   }

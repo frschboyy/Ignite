@@ -12,24 +12,3 @@ const getCookie = (cookie_name) => {
         return false
     }
 }
-
-(
-    function isAdmin() {
-        const cookieOB = JSON.parse(getCookie('Sessioonnnnn'))
-        const userEmail = cookieOB.user.email
-        const adminEmail = 'admin214@usiu.ac.ke';
-        if (getCookie('Sessionnnnn')){
-            document.getElementById('signup').style.display = 'none'
-            if (userEmail === adminEmail) {
-                document.getElementById('booking').style.display = 'none'
-            } else {
-                document.getElementById('report').style.display = 'none'
-            }
-        }
-        else {
-            document.getElementById('logout').style.display = "none"
-            document.getElementById('report').style.display = "none"
-        }
-    }
-)()
-

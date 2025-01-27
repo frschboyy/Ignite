@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="/css/aboutus.css">
+  <link rel="stylesheet" href="/css/navigation.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
   <title>ABOUT US</title>
@@ -15,17 +16,15 @@
 
 <body>
   <!-- Header -->
-  <header class="header">
+  <header class = "header">
     <a href="/home-page" id="logo">Youth<span>Ignite</span></a>
     <nav class="navbar">
-      <ul>
-        <li><a href="/home-page">Home</a></li>
-        <li><a href="/about-us" class="active">About Us</a></li>
-        <li><a href="/booking-form">Donate</a></li>
-        <li><a href="/contact-us">Contact Us</a></li>
-        <li id="signup"><a href="/sign-up">Sign Up</a></li>
-        <li id="logout"><a href="/logout">Logout</a></li>
-      </ul>
+        <ul>
+          <li><a href="/home-page">Home</a></li>
+          <li><a href="/about-us" class="active">About Us</a></li>
+          <li><a href="/donation-form">Donate</a></li>
+          <li><a href="/contact-us">Contact Us</a></li>
+        </ul>
     </nav>
   </header>
 
@@ -34,29 +33,30 @@
     <div class="hero-content">
       <h3 style="font-size: 48px">Make a Difference Today</h3>
       <b>
-      <p style="color: #ff8503; font-size: 28px">Your support can transform lives and empower those in need.<br>Contribute to our cause and be a part of something meaningful.</p>
+      <p style="color: #FFC107; font-size: 28px">Your support can transform lives and empower those in need.<br>Contribute to our cause and be a part of something meaningful.</p>
       </b>
-      <a href="/booking-form" class="hero-button">Donate Now</a>
+      <a href="/donation-form" class="hero-button">Donate Now</a>
     </div>
+    <br>
     <div class = "solid_img"></div>
   </section>
-
+ 
   <!-- About Us Section -->
   <section id="about-us">
       <div class="about-us-container">
           <div class="about-us-text">
               <h2>About Us</h2>
               <hr>
-              <p>In Arusha, Tanzania, 60% of youth are neither enrolled in school nor engaged in employment, perpetuating cycles of poverty and exposing many young girls to risks such as substance abuse, exploitation in commercial sex work, and involvement in criminal activities. Youth Ignite is dedicated to changing this narrative by empowering young girls through soccer.</p>
+              <p style="text-align: left;">In Arusha, Tanzania, 60% of youth are neither enrolled in school nor engaged in employment, perpetuating cycles of poverty and exposing many young girls to risks such as substance abuse, exploitation in commercial sex work, and involvement in criminal activities. Youth Ignite is dedicated to changing this narrative by empowering young girls through soccer.</p>
           </div>
       </div>
   </section>
-  
+`
   <!--- Mission -->
   <section id="mission-statement">
     <div class="mission-description">
       <h2>Mission</h2><br>
-      <p style="text-align:center">Our mission is to catalyze girls' empowerment through an innovative fusion of:</p>
+      <p>Our mission is to catalyze girls' empowerment through an innovative fusion of:</p>
       <br>
       <ul class="icon-list">
         <li><i class="fas fa-futbol"></i>Elite soccer training</li>
@@ -122,14 +122,29 @@
   <section id="revenue-generation">
       <div class="revenue-generation-container">
           <h2>Revenue Generation</h2>
-          <p>Our revenue streams include:</p>
-          <ul>
-              <li>Program fees</li>
-              <li>Sponsorships from companies like Coca-Cola, Adidas, and Nike</li>
-              <li>Government grants</li>
-              <li>Donations</li>
-          </ul>
-          <p>We also engage men's teams to support our cause by paying fees for training sessions and matches.</p>
+          <div style="padding: 20px; align">
+            <div class="value-proposition-grid">
+              <div class="value-item">
+                <img src="images/program_fees.jpg">
+                <p>Program fees collected from participants to support the initiative.</p>
+              </div>
+              <div class="value-item">
+                <img src="images/sponsorships.jpg">
+                <p>Sponsorships from companies like Coca-Cola, Adidas, and Nike.</p>
+              </div>
+              <div class="value-item">
+                <img src="images/government_grants.jpg">
+                <p>Government grants provided to fund projects and initiatives.</p>
+              </div>
+              <div class="value-item">
+                <img src="images/donations.jpg">
+                <p>Donations received from individuals and organizations.</p>
+              </div>
+            </div>
+          </div>
+          <b>
+          <p style="color: #08bc17">We also engage men's teams to support our cause by paying fees for training sessions and matches.</p>
+          </b>
       </div>
   </section>
 
@@ -137,8 +152,9 @@
   <section id="team">
       <div class="team-container">
           <h2>Our Team</h2>
-          <p class="contact-text">Brenda Francis Simba leads the initiative as the Founder, working alongside a management team that includes core athletes and renowned soccer legends. Our team is dedicated to empowering young girls and paving the way for a brighter, more promising future.</p>
           <img src="images/simba.jpg" class="contact-image">
+          <br><br>
+          <p class="contact-text" style="font-size:large">Brenda Francis Simba leads the initiative as the Founder, working alongside a management team that includes core athletes and renowned soccer legends. Our team is dedicated to empowering young girls and paving the way for a brighter, more promising future.</p>
       </div>
   </section>
 

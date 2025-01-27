@@ -1,0 +1,145 @@
+:root {
+    --main-color: #08bc17;
+    --accent-color: #ff6600;
+    --text-color: #333;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: var(--main-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+#logo span {
+    color: var(--accent-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    background: var(--bg-light);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* Donations Section */
+.donations {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+.donations h2 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.donation-instructions p,
+.donation-instructions ol {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.donation-instructions ol {
+    padding-left: 20px;
+}
+
+.donation-instructions li {
+    margin-bottom: 10px;
+}
+
+.paybill-info {
+    background: var(--bg-light);
+    padding: 15px;
+    border: 2px dashed var(--main-color);
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.paybill-info span {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .donations h2 {
+        font-size: 24px;
+    }
+
+    .paybill-info {
+        font-size: 16px;
+    }
+}
